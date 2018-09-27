@@ -2,8 +2,6 @@
 
 ## Accessing to a Better Education
 
-# 020-A.B.E
-
 ## Educación incluyente
 Planteamiento de Fedesoft
 
