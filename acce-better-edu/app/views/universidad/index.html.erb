@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col s12 center">
+    <h2>Universidad</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <table class="highlight responsive-table">
+      <thead>
+      <tr>
+        <th>Ciudad</th>
+        <th>Nit</th>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Estado</th>
+        <th>Editar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @univerdades.each do |uni| %>
+        <tr>
+          <td><%= uni.ciudad.nombre %></td>
+          <td><%= uni.nit %></td>
+          <td><%= uni.nombre %></td>
+          <td><%= uni.dereccion %></td>
+          <td><%= uni.telefono %></td>
+          <td><%= uni.estado %></td>
+          <td>
+            <a href="<%= edit_universidad_path(uni.id) %>"><i class="material-icons">edit</i></a>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

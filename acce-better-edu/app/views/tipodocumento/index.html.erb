@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col s12 center">
+    <h2>Tipo Documento</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <table class="highlight responsive-table">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripciòn</th>
+        <th>Editar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @tipo_documentos.each do |tp| %>
+        <tr>
+          <td><%= tp.nombre %></td>
+          <td><%= tp.descripcion %></td>
+          <td>
+            <a href="<%= edit_tipodocumento_path(tp.id) %>"><i class="material-icons">edit</i></a>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

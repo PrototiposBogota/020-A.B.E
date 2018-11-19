@@ -1,0 +1,2 @@
+class PersonaUniversidad < ApplicationRecord
+end

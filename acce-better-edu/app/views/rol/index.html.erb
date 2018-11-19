@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col s12 center">
+    <h2>Roles</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <table class="highlight responsive-table">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Menu Actual</th>
+        <th>Descripciòn</th>
+        <th>Editar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @roles.each do |rol| %>
+        <tr>
+          <td><%= rol.nombre %></td>
+          <td><%= rol.menu%></td>
+          <td><%= rol.descripcion %></td>
+          <td>
+            <a href="<%= edit_rol_path(rol.id) %>"><i class="material-icons">edit</i></a>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col s12 m9 offset-m3">
+
+    <div class="row">
+      <div class="col s12 m6 center">
+        <h2>Sign up</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "validate" %>
+            </div>
+
+            <div class="input-field col s12">
+              <% if @minimum_password_length %>
+                <label id="user_password">Password (<%= @minimum_password_length %> characters minimum)</label>
+              <% else %>
+                <%= f.label :password %>
+              <% end %>
+              <%= f.password_field :password, autocomplete: "new-password" %>
+            </div>
+
+            <div class="input-field col s12">
+              <%= f.label :password_confirmation %><br/>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s6">
+              <button type="submit" class="btn" data-disable-with="Sing Up" name="commit">
+                Sing Up <i class="material-icons right">power_settings_new</i>
+              </button>
+            </div>
+            <div class="col 16">
+              <a href="<%= new_session_path(resource_name) %>" class="btn">
+                Login <i class="material-icons right">lock_open</i>
+              </a>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

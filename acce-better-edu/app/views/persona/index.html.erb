@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col s12 center">
+    <h2>Persona</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <table class="highlight responsive-table">
+      <thead>
+      <tr>
+        <th>Tipo Documento</th>
+        <th>No. Documento</th>
+        <th>Nombre</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+        <th>Genero</th>
+        <th>Editar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @personas.each do |per| %>
+      <tr>
+        <td><%= per.tipo_documento.nombre %></td>
+        <td><%= per.num_documento %></td>
+        <td><%= per.nombre %></td>
+        <td><%= per.pri_apellido %></td>
+        <td><%= per.seg_apellido %></td>
+        <td><%= per.genero %></td>
+        <td>
+          <a href="<%= edit_persona_path(per.id) %>"><i class="material-icons">edit</i></a>
+        </td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

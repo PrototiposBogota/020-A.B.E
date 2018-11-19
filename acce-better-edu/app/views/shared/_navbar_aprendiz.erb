@@ -1,0 +1,66 @@
+<header>
+  <div class="navbar-fixed">
+    <nav class="">
+      <div class="container nav-wrapper">
+        <a href="<%= root_path %>" id="logo-st" class="brand-logo center">Access Better Education</a>
+        <a href="<%= root_path %>" id="logo-nd" class="brand-logo center">ABE</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a rel="nofollow" data-method="delete" href="/users/sign_out">
+              <i class="material-icons left">exit_to_app</i> Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div>
+    <ul class="sidenav sidenav-fixed" id="mobile-demo">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img src="https://materializecss.com/images/office.jpg">
+          </div>
+          <a href="#user"><img class="circle" src="https://materializecss.com/images/yuna.jpg"></a>
+          <a href="#name"><span class="white-text name">Aprendiz</span></a>
+          <a href="#email">
+            <span class="white-text email">
+              <%= current_user.email %>
+            </span>
+          </a>
+        </div>
+      </li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <!-- Convocatorias -->
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+              <i class="material-icons no-padding">folder_open</i> Convocatorias
+            </a>
+            <div class="collapsible-body">
+              <ul>
+                <li>
+                  <a href="#">
+                    <i class="material-icons no-padding">list</i>Listar
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons no-padding">assignment</i>Aplicaciones
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- Log out -->
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal" rel="nofollow" data-method="delete" href="/users/sign_out">
+              <i class="material-icons">exit_to_app</i> Logout
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>

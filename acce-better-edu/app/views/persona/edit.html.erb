@@ -1,0 +1,95 @@
+<div class="center">
+  <h4>Actualizar Persona</h4>
+</div>
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div id="div-message" class="hidden-element">
+      <span id="span-message" class="white-text"></span>
+    </div>
+    <div id="div-progress" class="progress hidden-element">
+      <div class="indeterminate"></div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <form id="frm-modificarPersona" class="col s12 m6 offset-m3">
+    <div class="row">
+      <div class="input-field col s12">
+        <select name="select-tipoDocumento">
+          <option value="" disabled selected>Seleccionar...</option>
+          <% TipoDocumento.all.each do |td| %>
+            <% if td.id == @persona.tipo_documento.id %>
+            <option value="<%= td.id %>" selected><%= td.nombre %></option>
+            <% else %>
+            <option value="<%= td.id %>"><%= td.nombre %></option>
+            <% end %>
+          <% end %>
+        </select>
+        <label>Tipo Documento *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-documento" type="text" name="txt-documento" class="validate" value="<%= @persona.num_documento %>">
+        <label for="txt-documento">Numero Documento *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-nombre" type="text" name="txt-nombre" class="validate" value="<%= @persona.nombre %>">
+        <label for="txt-nombre">Nombre *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-priapellido" type="text" name="txt-priapellido" class="validate" value="<%= @persona.pri_apellido %>">
+        <label for="txt-priapellido">Primer Apellido *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-segapellido" type="text" name="txt-segapellido" class="validate" value="<%= @persona.seg_apellido %>">
+        <label for="txt-segapellido">Segundo Apellido *</label>
+      </div>
+      <div class="input-field col s12">
+        <select name="select-genero">
+          <option value="" disabled selected>Seleccionar...</option>
+          <% if @persona.genero == "F" %>
+          <option value="F" selected>Femenino</option>
+          <option value="M">Masculino</option>
+          <% elsif @persona.genero == "M" %>
+          <option value="F" >Femenino</option>
+          <option value="M" selected>Masculino</option>
+          <% end %>
+        </select>
+        <label>Genero *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-fechanacimiento" type="text" name="txt-fechanacimiento" class="validate datepicker" value="<%= @persona.fecha_nacimiento %>">
+        <label for="txt-fechanacimiento">Fecha Nacimiento *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-direccion" type="text" name="txt-direccion" class="validate" value="<%= @persona.direccion %>">
+        <label for="txt-direccion">Direccion *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-telefono" type="text" name="txt-telefono" class="validate" value="<%= @persona.telefono %>">
+        <label for="txt-telefono">Teléfono *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-celular" type="text" name="txt-celular" class="validate" value="<%= @persona.celular %>">
+        <label for="txt-celular">Celular *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-email" type="text" name="txt-email" class="validate" value="<%= @persona.email %>">
+        <label for="txt-email">Email *</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <input type="hidden" name="txt-id" value="<%= @persona.id %>">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button type="button" class="btn" id="btn-modificarPersona" onclick="">
+          Actualiza <i class="material-icons right">edit</i>
+        </button>
+      </div>
+      <div class="col s6">
+        <a href="<%= persona_index_path %>" class="btn">
+          Listar <i class="material-icons right">list</i>
+        </a>
+      </div>
+    </div>
+  </form>
+</div>

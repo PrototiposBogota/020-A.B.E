@@ -1,0 +1,44 @@
+<div class="center">
+  <h4>Crear Rol</h4>
+</div>
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div id="div-message" class="hidden-element">
+      <span id="span-message" class="white-text"></span>
+    </div>
+    <div id="div-progress" class="progress hidden-element">
+      <div class="indeterminate"></div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <form id="frm-crearRol" class="col s12 m6 offset-m3">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="txt-nombre" type="text" name="txt-nombre" class="validate">
+        <label for="txt-nombre">Nombre *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-menu" type="text" name="txt-menu" class="validate">
+        <label for="txt-menu">Menu *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-descripcion" type="text" name="txt-descripcion" class="validate">
+        <label for="txt-descripcion">Descripcion *</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button type="button" class="btn" id="btn-crearRol" onclick="">
+          Crear <i class="material-icons right">save</i>
+        </button>
+      </div>
+      <div class="col s6">
+        <a href="<%= rol_index_path %>" class="btn">
+          Listar <i class="material-icons right">list</i>
+        </a>
+      </div>
+    </div>
+  </form>
+</div>

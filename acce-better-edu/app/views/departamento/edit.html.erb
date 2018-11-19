@@ -1,0 +1,45 @@
+<div class="center">
+  <h4>Actualizar Departamento</h4>
+</div>
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div id="div-message" class="hidden-element">
+      <span id="span-message" class="white-text"></span>
+    </div>
+    <div id="div-progress" class="progress hidden-element">
+      <div class="indeterminate"></div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <form id="frm-modificarDepartamento" class="col s12 m6 offset-m3">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="txt-codigo" type="text" name="txt-codigo" class="validate" value="<%= @departamento.codigo %>">
+        <label for="txt-codigo">Código *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="txt-nombre" type="text" name="txt-nombre" class="validate" value="<%= @departamento.nombre %>">
+        <label for="txt-nombre">Nombre *</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="text-descripcion" type="text" name="txt-descripcion" class="" value="<%= @departamento.descripcion %>">
+        <label for="text-descripcion">Descripción</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s7">
+        <input type="hidden" name="txt-id" value="<%= @departamento.id %>">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button type="button" class="btn" id="btn-modificarDepartamento" onclick="modificarDepartamento()">
+          Actualizar <i class="material-icons right">edit</i>
+        </button>
+      </div>
+      <div class="col s5">
+        <a href="<%= departamento_index_path %>" class="btn">
+          Listar <i class="material-icons right">list</i>
+        </a>
+      </div>
+    </div>
+  </form>
+</div>

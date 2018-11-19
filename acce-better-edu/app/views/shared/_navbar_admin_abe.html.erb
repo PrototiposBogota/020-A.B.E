@@ -1,0 +1,171 @@
+<header>
+  <div class="navbar-fixed">
+    <nav class="">
+      <div class="container nav-wrapper">
+        <a href="<%= root_path %>" id="logo-st" class="brand-logo center">Access Better Education</a>
+        <a href="<%= root_path %>" id="logo-nd" class="brand-logo center">ABE</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a rel="nofollow" data-method="delete" href="/users/sign_out">
+              <i class="material-icons left">exit_to_app</i> Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div>
+    <ul class="sidenav sidenav-fixed" id="mobile-demo">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img src="https://materializecss.com/images/office.jpg">
+          </div>
+          <a href="#user"><img class="circle" src="https://materializecss.com/images/yuna.jpg"></a>
+          <a href="#name"><span class="white-text name">Admin Plataforma</span></a>
+          <a href="#email">
+            <span class="white-text email">
+              <%= current_user.email %>
+            </span>
+          </a>
+        </div>
+      </li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <!-- Departamento -->
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+              <i class="material-icons no-padding">folder_open</i> Departamento
+            </a>
+            <div class="collapsible-body">
+              <ul>
+                <li>
+                  <a href="<%= new_departamento_path %>">
+                    <i class="material-icons no-padding">save</i>Crear
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= departamento_index_path %>">
+                    <i class="material-icons no-padding">list</i>Listar
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- Ciudad -->
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+              <i class="material-icons no-padding">folder_open</i> Ciudad
+            </a>
+            <div class="collapsible-body">
+              <ul>
+                <li>
+                  <a href="<%= new_ciudad_path %>">
+                    <i class="material-icons no-padding">save</i>Crear
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= ciudad_index_path %>">
+                    <i class="material-icons no-padding">list</i>Listar
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- Universidad -->
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+              <i class="material-icons no-padding">folder_open</i> Universidad
+            </a>
+            <div class="collapsible-body">
+              <ul>
+                <li>
+                  <a href="<%= new_universidad_path %>">
+                    <i class="material-icons no-padding">save</i>Crear
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= universidad_index_path %>">
+                    <i class="material-icons no-padding">list</i>Listar
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- Rol -->
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+              <i class="material-icons no-padding">folder_open</i> Rol
+            </a>
+            <div class="collapsible-body">
+              <ul>
+                <li>
+                  <a href="<%= new_rol_path %>">
+                    <i class="material-icons no-padding">save</i>Crear
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= rol_index_path %>">
+                    <i class="material-icons no-padding">list</i>Listar
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- Tipo Documento -->
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+              <i class="material-icons no-padding">folder_open</i> Tipo Documento
+            </a>
+            <div class="collapsible-body">
+              <ul>
+                <li>
+                  <a href="<%= new_tipodocumento_path %>">
+                    <i class="material-icons no-padding">save</i>Crear
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= tipodocumento_index_path %>">
+                    <i class="material-icons no-padding">list</i>Listar
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- Persona -->
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+              <i class="material-icons no-padding">folder_open</i> Persona
+            </a>
+            <div class="collapsible-body">
+              <ul>
+                <li>
+                  <a href="<%= new_persona_path %>">
+                    <i class="material-icons no-padding">person_add</i>Crear
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= persona_index_path %>">
+                    <i class="material-icons no-padding">list</i>Listar
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons">group_work</i>Asociar Rol
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- Log out -->
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal" rel="nofollow" data-method="delete" href="/users/sign_out">
+              <i class="material-icons">exit_to_app</i> Logout
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>

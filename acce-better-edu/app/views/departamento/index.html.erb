@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col s12 center">
+    <h2>Departamento</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <table class="highlight responsive-table">
+      <thead>
+      <tr>
+        <th>Codigo</th>
+        <th>Departamento</th>
+        <th>Descripción</th>
+        <th>Editar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @departamentos.each do |dep| %>
+        <tr>
+          <td><%= dep.codigo %></td>
+          <td><%= dep.nombre %></td>
+          <td><%= dep.descripcion %></td>
+          <td>
+            <a href="<%= edit_departamento_path(dep.id) %>"><i class="material-icons">edit</i></a>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<footer>
+</footer>

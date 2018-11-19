@@ -1,0 +1,120 @@
+Version: 1.0.0
+* Se crean la tablas y referencias
+* Se implementa materialize css
+* Se crea el menu con las paginas: 
+	Departamento, ciudad, universidad, programas, convocatoria y persona
+* Se agrega diseño a las paginas
+
+Version: 1.0.1
+* Se modifica el menu para que se vea lateral fijo
+* Se implementan los endpoint en el controller universidad
+
+Version 1.0.2
+* Se modifican los index se mejora la visualización
+
+Version 1.0.3
+*	Se realiza el cambio de base de datos para hacer la publicación en Heroku
+
+
+Version 1.0.4
+*	se finaliza el modulo de departamento y se mapea el modulo de ciudad
+
+Version 1.0.5
+*	Se definen las rutas para las opciones de departamento hasta personas, donde se deja funcional el index, new y edit
+	las opciones mensionadas el index carga la informacion para todas las ventanas mientras que el new y el edit solo
+	esta funcionando para departamento
+
+Version 1.0.6
+*   Se crear la funcionalidad de crear y editar para la opción ciudad
+
+Version 1.0.7
+*   Se crear la funcionalidad de crear y editar para la opción universidad
+
+Version 1.0.8
+*   Se crear la funcionalidad de crear y editar para la opción tipo de documento
+
+Version 1.0.9
+*   Se eliminan las migraciones para la tabla permiso, se agrega el campo menu
+    a la tabla rols, se crean los html de new y edit para el rol y persona,
+    se modifica el archivo seed para que limpie las tablas y agregue los registros iniciales,
+
+Version 1.1.0
+*   Se implimenta la gema de devise para el manejo de sesiones.
+
+Version 1.1.1
+*   Se le implementa el diseño de materialize a las vistas de devise
+
+Version 1.1.2
+*   Se implementa el control de usario mediante devise, roles y personas
+
+Version 1.1.3
+*   Se implementa la relación muchos a muchos entre personas y universidades
+
+Version 1.1.4
+*   Se configura el proyecto para crear el index inicial en el cual se muestre la idea del proyecto.
+
+Version 1.1.5
+*   Se crea el index en el cual se da a conocer de qué trata el proyecto a quien va dirigido y quienes intervienen.
+*   Se decargan las imagenes y se deja los links y fechas para efecto de derechos de autor.
+    fecha: 27/09/2018
+    Hora: 9am
+    banner - 1
+    https://www.mckinsey.com/co/~/media/McKinsey/Locations/South%20America/Colombia/Bogota/Colombia_Bogota_thumb_GettyImages769722707_1536x1536.ashx
+    banner - 2
+    https://www.ucc.edu.co/bogota/PublishingImages/banner_bogota_portal.jpg
+    banner - 3
+    http://www.javeriana.edu.co/documents/17210/8544054/MAPA+DEL+CAMPUS.jpg
+
+Version 1.1.6
+*   Se implementan las opciones faltantes a los tres menus de los roles a manejar.
+
+Repositorio de Acompañamiento
+https://github.com/PrototiposBogota/020-A.B.E
+
+https://github.com/esgantivar
+
+https://sqlitebrowser.org/
+
+https://procredito.fenalcoantioquia.com/modulo_zona_descargas/archivo_plano/divipola_dane.pdf
+
+https://rubygems.org/
+
+https://github.com/nsarno/knock
+
+https://github.com/cyu/rack-cors
+
+https://github.com/esgantivar/fullstack-api-builder
+
+#Redireccionar
+redirect_to action: "my_books"
+
+heroku login
+
+# heroku git:clone -a acce-better-edu
+git add .
+git commit -am "version 1.0.5"
+git push heroku master
+
+heroku run rake --trace db:migrate
+heroku run rake --trace db:seed
+
+#Seguimiento en el log
+heroku logs --tail
+
+1. Modelos
+	Relaciones
+	consultas
+	inflexiones
+	manejo de js
+	poblar base de datos
+
+2. Api
+	get
+	post
+	Auth(json web token)
+
+3. Deploy en Heroku
+	Compilar Android	apk
+	Compilar Ios		ipa
+	
+4. Pasar parametros

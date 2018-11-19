@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AccessBetterEducation</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<% if user_signed_in? %>
+  <%= render partial: current_user.rol.menu %>
+
+  <div class="row">
+    <div class="col s12 m9 offset-m3">
+
+      <%= yield %>
+
+      <div class="row">
+        <div class="col 12 m6">
+          <% if notice && user_signed_in? %>
+            <div class="card-panel teal lighten-2">
+          <span id="span-message" class="white-text">
+            <%= notice %>
+          </span>
+            </div>
+          <% end %>
+
+          <% if alert %>
+            <div class="card-panel red lighten-2">
+          <span id="span-message" class="white-text">
+            <%= alert %>
+          </span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+  <%= render partial: 'shared/navbar_login.html.erb' %>
+
+  <%= yield %>
+
+  <% if notice && user_signed_in? %>
+    <div class="row">
+      <div class="col s12 m9 offset-m3">
+        <div class="row">
+          <div class="col 12 m6">
+            <div class="card-panel teal lighten-2">
+              <span id="span-message" class="white-text">
+                <%= notice %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="row">
+      <div class="col s12 m9 offset-m3">
+        <div class="row">
+          <div class="col 12 m6">
+            <div class="card-panel red lighten-2">
+              <span id="span-message" class="white-text">
+                <%= alert %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        materializeInit();
+    });
+</script>
+</body>
+</html>
